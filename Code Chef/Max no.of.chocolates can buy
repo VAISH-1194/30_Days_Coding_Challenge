@@ -1,0 +1,33 @@
+Problem:-
+Chef has X 5 rupee coins and Y 10 rupee coins. Chef goes to a shop to buy chocolates for Chefina where each chocolate costs 
+Z rupees. Find the maximum number of chocolates that Chef can buy for Chefina.
+
+Input format:-
+-> The first line contains a single integer T — the number of test cases. Then the test cases follow.
+-> The first and only line of each test case contains three integers X, 
+Y and Z — the number of 5 rupee coins, the number of 10 rupee coins and the cost of each chocolate.
+
+Output format:-
+For each test case, output the maximum number of chocolates that Chef can buy for Chefina.
+
+Solution:-
+
+def max_chocolates(T, test_cases):
+    results = []
+    for i in range(T):
+        X, Y, Z = test_cases[i]
+        max_chocolates = (X * 5 + Y * 10) // Z
+        results.append(max_chocolates)
+    return results
+
+
+T = int(input())
+test_cases = []
+for _ in range(T):
+    X, Y, Z = map(int, input().split())
+    test_cases.append((X, Y, Z))
+
+
+results = max_chocolates(T, test_cases)
+for result in results:
+    print(result)
