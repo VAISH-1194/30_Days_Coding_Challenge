@@ -1,0 +1,49 @@
+Your task is very simple: given two integers 
+�
+A and 
+�
+B, write a program to add these two numbers and output the sum.
+
+Input Format
+The first line contains an integer 
+�
+T, the total number of test cases.
+Then follow 
+�
+T lines, each line contains two integers, 
+�
+A and 
+�
+B.
+Output Format
+For each test case, add 
+�
+A and 
+�
+B and display the sum in a new line.
+
+
+Solution:-
+import java.util.Scanner;
+
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
+        Scanner sc = new Scanner(System.in);
+
+      
+        int t = sc.nextInt();
+
+     
+        while (t-- > 0) {
+           
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+         
+            int sum = a + b;
+
+        
+            System.out.println(sum);
+        }
+    }
+}
