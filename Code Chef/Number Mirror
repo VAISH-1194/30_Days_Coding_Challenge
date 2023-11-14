@@ -1,0 +1,22 @@
+Write a program that takes a number 
+N as the input, and prints it to the output.
+
+Input Format
+The only line of input contains a single integer.
+
+Output Format
+Output the answer in a single line.
+
+Solution:-
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+
+        System.out.println(number);
+        scanner.close();
+    }
+}
