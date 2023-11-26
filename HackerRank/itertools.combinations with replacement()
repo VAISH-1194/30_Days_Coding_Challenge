@@ -1,0 +1,15 @@
+Question:-
+Task
+
+You are given a string .
+Your task is to print all possible size  replacement combinations of the string in lexicographic sorted order.
+
+Solution:-
+from itertools import combinations_with_replacement
+
+s, k = input().split()
+
+result = sorted(combinations_with_replacement(sorted(s), int(k)))
+
+for item in result:
+    print(''.join(item))
