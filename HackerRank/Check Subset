@@ -1,0 +1,22 @@
+Question:-
+You are given two sets,  and .
+Your job is to find whether set  is a subset of set .
+
+If set  is subset of set , print True.
+If set  is not a subset of set , print False.
+
+Solution:-
+
+if __name__ == '__main__':
+    t = int(input())
+    
+    for _ in range(t):
+        n_a = int(input())
+        set_a = set(map(int, input().split()))
+
+        n_b = int(input())
+        set_b = set(map(int, input().split()))
+
+        is_subset = set_a.issubset(set_b)
+
+        print(is_subset)
