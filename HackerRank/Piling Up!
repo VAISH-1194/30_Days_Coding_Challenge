@@ -1,0 +1,38 @@
+Question:-
+There is a horizontal row of  cubes. The length of each cube is given. You need to create a new vertical pile of cubes. 
+The new pile should follow these directions: if  is on top of  then . When stacking the cubes, you can only pick up 
+either the leftmost or the rightmost cube each time. Print Yes if it is possible to stack the cubes. Otherwise, print No.
+
+Solution:-
+def can_stack_cubes(num_test_cases, test_cases):
+    results = []
+    for test_case in test_cases:
+        n = test_case[0]
+        blocks = test_case[1]
+        i = 0
+        j = n - 1
+        top = float('inf')
+        while i <= j:
+            if blocks[i] >= blocks[j] and blocks[i] <= top:
+                top = blocks[i]
+                i += 1
+            elif blocks[j] >= blocks[i] and blocks[j] <= top:
+                top = blocks[j]
+                j -= 1
+            else:
+                results.append("No")
+                break
+        else:
+            results.append("Yes")
+    return results
+
+if __name__ == "__main__":
+    T = int(input())
+    test_cases = []
+    for _ in range(T):
+        n = int(input())
+        blocks = list(map(int, input().split()))
+        test_cases.append((n, blocks))
+    
+    results = can_stack_cubes(T, test_cases)
+    print(*results, sep='\n')
