@@ -1,0 +1,13 @@
+Question:-
+Task
+
+Dr. John Wesley has a spreadsheet containing a list of student's , ,  and .
+
+Your task is to help Dr. Wesley calculate the average marks of the students.
+
+Solution:-
+from collections import namedtuple
+
+n, columns = int(input()), input().split()
+Student = namedtuple('Student', columns)
+print("{:.2f}".format(sum(int(Student(*input().split()).MARKS) for _ in range(n)) / n))
