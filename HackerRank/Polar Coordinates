@@ -1,0 +1,15 @@
+Question:-
+You are given a complex . Your task is to convert it to polar coordinates.
+
+Solution:-
+import cmath
+
+if __name__ == '__main__':
+    complex_number = complex(input())
+    
+
+    modulus, phase = cmath.polar(complex_number)
+    
+   
+    print(round(modulus, 3))
+    print(round(phase, 3))
