@@ -1,0 +1,27 @@
+Question:-
+The defaultdict tool is a container in the collections class of Python. It's similar to 
+the usual dictionary (dict) container, but the only difference is that a defaultdict will have 
+a default value if that key has not been set yet. If you didn't use a defaultdict you'd have to 
+check to see if that key exists, and if it doesn't, set it to what you want.
+
+Solution:-
+from collections import defaultdict
+
+def word_indices(n, m, group_a, group_b):
+    positions = defaultdict(list)
+
+    for idx, word in enumerate(group_a, start=1):
+        positions[word].append(idx)
+
+    for word in group_b:
+        if word in positions:
+            print(" ".join(map(str, positions[word])))
+        else:
+            print("-1")
+
+if __name__ == "__main__":
+    n, m = map(int, input().split())
+    group_a = [input().strip() for _ in range(n)]
+    group_b = [input().strip() for _ in range(m)]
+
+    word_indices(n, m, group_a, group_b)
