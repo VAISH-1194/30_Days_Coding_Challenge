@@ -1,0 +1,17 @@
+Question:-
+Task
+
+You are given a string .
+Your task is to print all possible combinations, up to size , of the string in lexicographic sorted order.
+
+Solution:-
+from itertools import combinations
+
+s, k = input().split()
+
+result = []
+for r in range(1, int(k) + 1):
+    result.extend(sorted(combinations(sorted(s), r)))
+
+for item in result:
+    print(''.join(item))
