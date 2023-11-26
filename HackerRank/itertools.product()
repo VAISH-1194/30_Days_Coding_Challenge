@@ -1,0 +1,22 @@
+Question:-
+Task
+
+You are given a two lists  and . Your task is to compute their cartesian product X.
+
+Example
+
+A = [1, 2]
+B = [3, 4]
+
+AxB = [(1, 3), (1, 4), (2, 3), (2, 4)]
+
+Solution:-
+from itertools import product
+
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+result = list(product(A, B))
+
+for item in result:
+    print(item, end=' ')
