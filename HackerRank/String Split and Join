@@ -1,0 +1,16 @@
+Question:-
+Task
+You are given a string. Split the string on a " " (space) delimiter and join using a - hyphen.
+
+Solution:-
+def split_and_join(line):
+    
+    return "-".join(line.split(" "))
+
+if __name__ == '__main__':
+    
+    input_line = input()
+    
+    result = split_and_join(input_line)
+    
+    print(result)
