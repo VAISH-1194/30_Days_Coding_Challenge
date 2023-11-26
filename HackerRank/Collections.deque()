@@ -1,0 +1,30 @@
+Question:-
+collections.deque()
+A deque is a double-ended queue. It can be used to add or remove elements from both ends.
+
+Deques support thread safe, memory efficient appends and pops from either side of the deque with approximately the same  performance in either direction.
+
+Click on the link to learn more about deque() methods.
+Click on the link to learn more about various approaches to working with deques: Deque Recipes.
+
+Solution:-
+from collections import deque
+
+def perform_operations(operations):
+    d = deque()
+    for op in operations:
+        if op[0] == "append":
+            d.append(int(op[1]))
+        elif op[0] == "appendleft":
+            d.appendleft(int(op[1]))
+        elif op[0] == "pop":
+            d.pop()
+        elif op[0] == "popleft":
+            d.popleft()
+    return d
+
+if __name__ == "__main__":
+    n = int(input())
+    operations = [input().split() for _ in range(n)]
+    result = perform_operations(operations)
+    print(*result)
