@@ -1,0 +1,33 @@
+Question:-
+Task
+
+ is a shoe shop owner. His shop has  number of shoes.
+He has a list containing the size of each shoe he has in his shop.
+There are  number of customers who are willing to pay  amount of money only if they get the shoe of their desired size.
+
+Your task is to compute how much money  earned.
+
+Solution:-
+from collections import Counter
+
+def calculate_earnings(shoe_inventory, customer_data):
+    earnings = 0
+    inventory_counter = Counter(shoe_inventory)
+
+    for customer in customer_data:
+        size, price = customer
+        if inventory_counter[size] > 0:
+            earnings += price
+            inventory_counter[size] -= 1
+
+    return earnings
+
+if __name__ == "__main__":
+ 
+    num_shoes = int(input())
+    shoe_inventory = list(map(int, input().split()))
+    num_customers = int(input())
+    customer_data = [list(map(int, input().split())) for _ in range(num_customers)]
+
+    total_earnings = calculate_earnings(shoe_inventory, customer_data)
+    print(total_earnings)
