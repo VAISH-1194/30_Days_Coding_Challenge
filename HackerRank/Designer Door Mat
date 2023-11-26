@@ -1,0 +1,18 @@
+Question:-
+Mr. Vincent works in a door mat manufacturing company. One day, he designed a new door mat with the following specifications:
+
+Mat size must be X. ( is an odd natural number, and  is  times .)
+The design should have 'WELCOME' written in the center.
+The design pattern should only use |, . and - characters.
+
+Solution:-
+def create_door_mat(rows, columns):
+    pattern = [('.|.' * (2 * i + 1)).center(columns, '-') for i in range(rows // 2)]
+    welcome_line = 'WELCOME'.center(columns, '-')
+    door_mat = '\n'.join(pattern + [welcome_line] + pattern[::-1])
+    return door_mat
+
+if __name__ == "__main__":
+    n, m = map(int, input().split())
+    door_mat_pattern = create_door_mat(n, m)
+    print(door_mat_pattern)
