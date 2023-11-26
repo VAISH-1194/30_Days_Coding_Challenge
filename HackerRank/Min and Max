@@ -1,0 +1,17 @@
+Question:-
+Task
+
+You are given a 2-D array with dimensions X.
+Your task is to perform the min function over axis  and then find the max of that.
+
+Solution:-
+import numpy as np
+n, m = map(int, input().split())
+
+arr = np.array([input().split() for _ in range(n)], dtype=int)
+
+min_result = np.min(arr, axis=1)
+
+max_of_min_result = np.max(min_result)
+
+print(max_of_min_result)
